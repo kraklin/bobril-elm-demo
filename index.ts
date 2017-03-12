@@ -24,7 +24,12 @@ let setupPorts = (elmPorts) => {
 b.init(() => {
     return m.Paper({ style: { width: 700, marginLeft: 'auto', marginRight: 'auto', padding: '1em' } }, [
         {tag: 'h1', children: 'Bobril with Elm component'},
-        {tag: 'p', children: 'This is a small example of using Elm app as component inside Bobril framework.'},
+        {tag: 'p', children: [
+            'This is a small example of using Elm app as component inside Bobril framework.',
+            {tag: 'br'},
+            'You can find source code of this demo on GitHub ', 
+            {tag: 'a', attrs: {href: 'https://github.com/kraklin/bobril-elm-demo'}, children: 'https://github.com/kraklin/bobril-elm-demo'}
+        ]},
         m.Paper({zDepth: 3, style: {width: 350, padding: '1em', display: 'inline-block', verticalAlign: 'top'}}, [
             m.TextField({value: playerName, labelText: 'Player Name'}),
 
